@@ -42,7 +42,6 @@ VALIDATE $?  "START MYSQL"
 
 #Below code will be useful for idempotent nature
 mysql -h 172.31.82.79 -uroot -pExpenseApp@1 -e 'show databases;'
-
 if [ $? -ne o ]
 then
     echo "mysql_secure_installation --set-root-pass ExpenseApp@1"
