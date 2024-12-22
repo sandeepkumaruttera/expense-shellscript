@@ -1,6 +1,8 @@
 #!/bin/bash
 
 userid=$(id -u)
+R="\e[31m"
+N="\e[0m"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -34,6 +36,16 @@ systemctl start mysqld
 
 VALIDATE $?  "START MYSQL"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
+#mysql_secure_installation --set-root-pass ExpenseApp@1
 
-VALIDATE $?  "SETTING USER AND PASSWORD"
+#VALIDATE $?  "SETTING USER AND PASSWORD"
+
+#Below code will be useful for idempotent nature
+mysql -h db.daws78s.online -uroot -p${mysql_root_password} -e 'show databases;'
+
+if [ $? -ne o ]
+then
+    echo "mysql_secure_installation --set-root-pass ExpenseApp@1"
+else
+    echo  -e "already username and password is set ..$R..SKIPPING $N"
+fi
