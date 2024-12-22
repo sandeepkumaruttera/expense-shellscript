@@ -4,8 +4,9 @@ userid=$(id -u)
 
 VALIDATE(){
     if [ $1 -ne 0]
-    exit 1
+    then
     echo "$2 IS ....FAILURE"
+    exit 1
     else
     echo "$2 is .....success"
     fi
