@@ -41,7 +41,7 @@ VALIDATE $?  "START MYSQL"
 #VALIDATE $?  "SETTING USER AND PASSWORD"
 
 #Below code will be useful for idempotent nature
-mysql -h db.daws78s.online -uroot -p${mysql_root_password} -e 'show databases;'
+mysql -h 172.31.82.79 -uroot -pExpenseApp@1 -e 'show databases;'
 
 if [ $? -ne o ]
 then
