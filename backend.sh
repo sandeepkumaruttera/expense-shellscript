@@ -21,7 +21,7 @@ if [ $userid -ne 0 ]
 then 
     echo "you are not in super user"
     exit 1
-    else 
+else 
     echo "you are in super user"
 fi
 
@@ -84,7 +84,7 @@ VALIDATE $?  "mysql install"
 
 mysql -h 172.31.30.16 -uroot -p{password} < /app/schema/backend.sql
 
-VALIDATE $? "ABLE TO LOGIN WITH ACCESS"
+VALIDATE $?  "schema is loading"
 
 
 systemctl restart backend
