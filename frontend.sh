@@ -3,8 +3,8 @@
 userid=$(id -u)
 R="\e[31m"
 N="\e[0m"
-#echo "plz enter your mysql password"
-#sread "password"
+echo "plz enter your mysql password"
+read "password"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -43,7 +43,7 @@ VALIDATE $?  "START MYSQL"
 #VALIDATE $?  "SETTING USER AND PASSWORD"
 
 Below code will be useful for idempotent nature
-mysql                                                                     #mysql -h 172.31.82.79 -uroot -p${password} -e 'show databases;'
+mysql -h 172.31.82.79 -uroot -p${password} -e 'show databases;'
 if [ $? -ne 0 ]
 then
     echo "mysql_secure_installation --set-root-pass ExpenseApp@1"
