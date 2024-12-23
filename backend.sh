@@ -84,6 +84,8 @@ VALIDATE $?  "mysql install"
 
 mysql -h 172.31.30.16 -uroot -p{password} < /app/schema/backend.sql
 
+VALIDATE $? "ABLE TO LOGIN WITH ACCESS"
+
 
 systemctl restart backend
 
