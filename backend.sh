@@ -12,6 +12,7 @@ VALIDATE(){
     then
     echo "$2 is .....failure"
     exit 1
+    else
     echo "$2 is ....success"
     fi
 }
@@ -38,9 +39,7 @@ VALIDATE $? "install nodejs"
 id expense
 if [ $? -ne 0 ]
 then
-    useradd expense
-    VALIDATE $? "CREATING useradd"
-    exit 1 
+    useradd expense 
 else 
     echo "already expense username is created"
 fi
@@ -51,7 +50,6 @@ curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expen
 
 
 cd /app
-
 rm -rf /app/*
 unzip /tmp/backend.zip
 
