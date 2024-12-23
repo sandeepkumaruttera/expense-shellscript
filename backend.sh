@@ -18,11 +18,11 @@ VALIDATE(){
 }
 
 if [ $userid -ne 0 ]
-then 
+then
     echo "you are not in super user:"
     exit 1
-else 
-    echo "you are in super user"
+else
+    echo "you are at super user"
 fi
 
 
