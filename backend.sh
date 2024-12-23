@@ -2,6 +2,8 @@
 
 
 userid=(id -u)
+echo "enter your password"
+read "password"
 
 
 
@@ -71,7 +73,7 @@ systemctl enable backend
 dnf install mysql -y
 
 
-mysql -h 172.31.30.16 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 172.31.30.16 -uroot -p{password} < /app/schema/backend.sql
 
 
 systemctl restart backend
