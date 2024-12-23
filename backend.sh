@@ -82,7 +82,7 @@ dnf install mysql -y
 VALIDATE $?  "mysql install"
 
 
-mysql -h 172.31.30.16 -uroot -p{password} < /app/schema/backend.sql
+mysql -h 172.31.30.16 -uroot -p${password} < /app/schema/backend.sql
 
 VALIDATE $?  "schema is loading"
 
