@@ -46,7 +46,7 @@ VALIDATE $?  "START MYSQL"
 mysql -h 172.31.19.151 -uroot -p${password} -e 'show databases;'
 if [ $? -ne 0 ]
 then
-     mysql_secure_installation --set-root-pass ExpenseApp@1
+     mysql_secure_installation --set-root-pass ${password}
 else
     echo  -e "already username and password is set ..$R..SKIPPING $N"
 fi
