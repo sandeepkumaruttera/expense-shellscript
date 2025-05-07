@@ -45,7 +45,7 @@ else
     echo "already expense username is created"
 fi
 
-mkdir -p /app
+mkdir -p /app    # -p Creates parent directories if they don't exist.
 VALIDATE $?  "creating app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
